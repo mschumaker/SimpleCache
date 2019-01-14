@@ -10,25 +10,6 @@ using Xunit;
 
 namespace SimpleCache.Tests.Unbounded
 {
-    public class UnboundedCacheSpec : Spec<UnboundedCache<String,int>>
-    {
-        protected const string Key = "key";
-        protected Mock<IBackingStore<String, int>> BackingStore = new Mock<IBackingStore<string, int>>();
-        protected CurrentThreadTaskScheduler TaskScheduler = new CurrentThreadTaskScheduler();
-
-        public UnboundedCacheSpec()
-        {
-            Subject = new UnboundedCache<string, int>(BackingStore.Object, TaskScheduler);
-        }
-    }
-
-    public class WhenConstructingCache : UnboundedCacheSpec
-    {
-        public WhenConstructingCache()
-        {
-            It = () => Assert.NotNull(Subject);
-        }
-    }
     public class UnboundedCacheTests
     {
         private const string Key = "key";
